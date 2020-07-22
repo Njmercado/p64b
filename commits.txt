@@ -1,0 +1,39 @@
+Changes:
+    Genaral:
+        + Agregados lo iconos de material icons.
+    Views:
+        Home:
+            + Vista agregada.
+            ? Vista principal.
+    Components:
+        Grid:
+            Column:
+                + Componente creado.
+                ? Este componente funciona para poder manejar objetos dentro en vertical. Una columna.
+            Row:
+                + Componente creado.
+                ? Este componente funciona para poder manejar objetos dentro en horizontal. Una fila.
+            Container:
+                + Componente creado.
+                ? Wrapper para los componentes Column and Row.
+        Avatar:
+            + Componente creado.
+            ? Este componente funciona para poder mostrar imagenes con fondo circular.
+        Button:
+            + Componente creado
+            ? Boton personalizado.
+        Chip:
+            + Componente creado.
+            ? Este componente funciona para poder mostrar información pequeña, pero directa, de algún tema en especifico.
+        Logo:
+            + Componente creado.
+            ? Componente que maneja el logo de la página. Es para poder tener un logo personalizado a convenir de la situación.
+        TextArea:
+            + Componente creado.
+            ? Componente input multilinea para poder manejar parrafos.
+        TextField:
+            + Componente creado.
+            ? Componente input para poder manejar info puntual.
+    Data:
+        ListOfWorks:
+            ? Lista de trabajos, principales, que he desarrollado.
