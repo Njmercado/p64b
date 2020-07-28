@@ -8,6 +8,7 @@
   import Chip from "../Components/Chip.svelte";
   import TextField from "../Components/TextField.svelte";
   import TextArea from "../Components/TextArea.svelte";
+  import RouterFloatingButton from "../Components/RouterFloatingButton.svelte"
   import ListOfWorks from "../Data/ListOfWorks.js";
 </script>
 
@@ -74,6 +75,10 @@
 </style>
 
 <main>
+
+  <!-- floating router button -->
+  <RouterFloatingButton></RouterFloatingButton>
+
   <!-- Main short description -->
   <Container columns={2}>
     <Column
@@ -130,7 +135,7 @@
           icon={'book'}
           placeholder="signature" />
       </div>
-      <TextArea icon="face" placeholder="description" />
+      <TextArea icon="article" placeholder="description" />
     </Container>
       <Button round="16px" textColor="rgba(0, 0, 0, .6)" size="3em">send</Button>
   </Column>
