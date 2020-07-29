@@ -1,6 +1,6 @@
-import Home from './Views/Home.svelte';
+import App from "./App.svelte"
 
-const app = new Home({
+const app = new App({
 	target: document.body
 });
 

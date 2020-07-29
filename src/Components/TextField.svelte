@@ -61,7 +61,6 @@
       position: relative;
       margin: 0 auto;
       border-width: 0px;
-      width: 100%;
       height: 100%;
   }
 

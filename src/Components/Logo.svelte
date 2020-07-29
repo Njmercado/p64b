@@ -6,7 +6,8 @@
   export let width = 100;
   export let height = 100;
   export let weight = 2;
-  export let color = 'black'
+  export let color = "black";
+  export let className = "";
 
   function updateLogo() {
     const canvas = document.getElementById(id);
@@ -55,7 +56,7 @@
     ctx.moveTo(width / 4, height * (3 / 4));
     ctx.lineTo(width * (3 / 4), height * (3 / 4));
 
-    ctx.strokeStyle = color
+    ctx.strokeStyle = color;
     ctx.stroke();
   }
 
@@ -64,8 +65,6 @@
   });
 </script>
 
-<canvas
-  id={id}
-  {width}
-  {height}
-/>
+<div class={`${className}`}>
+  <canvas {id} {width} {height} />
+</div>

@@ -62,5 +62,5 @@
 </style>
 
 <div class="input round shadow" id={id}>
-    <textarea id={id} rows="10" placeholder={placeholder}></textarea>
+    <textarea id={id} rows="10" placeholder={placeholder} style="text-align: start"></textarea>
 </div>

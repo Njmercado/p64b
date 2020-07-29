@@ -33,9 +33,6 @@
   .flex-item:hover .work-title {
     font-size: 4em;
   }
-  .flex-item:hover .work-description {
-    display: block;
-  }
   .flex-item:hover .work-info-container {
     display: block;
   }

@@ -1,4 +1,10 @@
-<script></script>
+<script>
+    import { push } from 'svelte-spa-router'
+
+    function openRoute(route) {
+        push(route)
+    }
+</script>
 
 <style>
     .floating-router-container {
@@ -127,13 +133,22 @@
         <i class="material-icons">menu</i>
     </div>
 
-    <div class="floating-router-item-1 circle-border absolute pointer z-index-1 center btn">
+    <div
+        class="floating-router-item-1 circle-border absolute pointer z-index-1 center btn"
+        on:click={() => openRoute("/")}
+    >
         <i class="material-icons">home</i>
     </div>
-    <div class="floating-router-item-2 circle-border absolute pointer z-index-1 center btn">
+    <div
+        class="floating-router-item-2 circle-border absolute pointer z-index-1 center btn"
+        on:click={() => openRoute("/works")}
+    >
         <i class="material-icons">work</i>
     </div>
-    <div class="floating-router-item-3 circle-border absolute pointer z-index-1 center btn">
+    <div
+        class="floating-router-item-3 circle-border absolute pointer z-index-1 center btn"
+        on:click={() => openRoute("/about")}
+    >
         <i class="material-icons">face</i>
     </div>
 </div>
