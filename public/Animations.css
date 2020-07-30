@@ -1,0 +1,85 @@
+  :root {
+    --animation-delay: 2s;
+    --animation-duration: 2s;
+    --font-size: 16px;
+  }
+  
+  /* zoom-out animation keyFrames */
+  @keyframes zoom-out-animation {
+    0% { opacity: 1; }
+    100% { opacity: 0; display: none; width: 0; height: 0; }
+  }
+  @-moz-keyframes zoom-out-animation {
+    0% { opacity: 1; }
+    100% { opacity: 0; display: none; width: 0; height: 0; }
+  }
+  @-webkit-keyframes zoom-out-animation{
+    0% { opacity: 1; }
+    100% { opacity: 0; display: none; width: 0; height: 0; }
+  }
+  .zoom-out-animation {
+    animation: zoom-out-animation var(--animation-duration) forwards;
+    animation-delay: 2s;
+    -moz-animation: zoom-out-animation var(--animation-duration) forwards;
+    -moz-animation-delay: 2s;
+    -webkit-animation: zoom-out-animation var(--animation-duration) forwards;
+    -webkit-animation-delay: 2s;
+  }
+
+  /* Information keyFrames */
+  @-moz-keyframes fade-in-animation { 100% { opacity: 1; } }
+  @keyframes fade-in-animation { 100% { opacity: 1; } }
+  @-webkit-keyframes fade-in-animation { 100% { opacity: 1; } }
+  .fade-in-animation {
+    animation: fade-in-animation var(--animation-duration) forwards;
+    animation-delay: var(--animation-delay);
+    -moz-animation: fade-in-animation var(--animation-duration) forwards;
+    -moz-animation-delay: var(--animation-delay);
+    -webkit-animation: fade-in-animation var(--animation-duration) forwards;
+    -webkit-animation-delay: var(--animation-delay);
+    opacity: 0;
+  }
+
+  /* shake animation keyframes*/
+  @-moz-keyframes shake-animate {
+    0%, 50%, 100% {opacity: 1} 
+    0% { transform: translateY(4px);} 
+    50% { transform: translateY(-8px); } 
+    100% { transform: translateY(12px); }
+  }
+  @keyframes shake-animate { 
+    0%, 50%, 100% {opacity: 1} 
+    0% { transform: translateY(4px);} 
+    50% { transform: translateY(-8px); } 
+    100% { transform: translateY(12px); }
+  }
+  @-webkit-keyframes shake-animate { 
+    0%, 50%, 100% {opacity: 1} 
+    0% { transform: translateY(4px);} 
+    50% { transform: translateY(-8px); } 
+    100% { transform: translateY(12px); }
+  }
+  .shake-animation {
+    animation: shake-animate var(--animation-duration) infinite;
+    animation-delay:  var(--animation-delay);
+    -moz-animation: shake-animate var(--animation-duration) infinite;
+    -moz-animation-delay: var(--animation-delay);
+    -webkit-animation: shake-animate var(--animation-duration) infinite;
+    -webkit-animation-delay: var(--animation-delay);
+  }
+
+  /* hide animation keyframe */
+  @keyframes hide-animation {to { display: block}}
+  @-moz-keyframes hide-animation {to { display: block}}
+  @-webkit-keyframes hide-animation {to { display: block}}
+  .hide-animation {
+    animation: hide-animation var(--animation-duration) forwards;
+    animation-delay: var(--animation-delay);
+    -moz-animation: hide-animation var(--animation-duration) forwards;
+    -moz-animation-delay: var(--animation-delay);
+    -webkit-animation: hide-animation var(--animation-duration) forwards;
+    -webkit-animation-delay: var(--animation-delay);
+
+    min-height: 0px;
+    display: none;
+  }

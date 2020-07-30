@@ -1,16 +1,13 @@
 Changes:
-    General:
-        + Agregado svelte-spa-router
-        App.svelte:
-            + Archivo creado.
-            ? Este archivo es el punto de entrada para la app.
-            ? Este archivo es el encargado de orquestar el router.
-    Views:
-        Home:
-            + Agregado RouterFloatingButton component
-        About:
-            + Vista creada.
-            + Esta vista funciona para poder visualizar todo lo relacionado a mi experiencia en ciertas techs.
     Components:
-        RouterFloatingButton:
-            + Agregadas rutas mediante svelte-spa-router
+        CircularGraph:
+            + Componente creado.
+            ? Este componente funciona para poder mostrar un donut graph.
+            ? Este componente muestra un porcentaje y un legend referenciando a la información.
+            ? Este componente es un canvas.
+            ? Este componente recive parametros tales como: size, color, legend y percentage
+    Views:
+        About:
+            ? Vista terminada.
+            + Agregado el componente CircularGraph.
+            - Eliminada imagen al inicio, junto con la animación de los mockups --> se veia fea y no funcionba.

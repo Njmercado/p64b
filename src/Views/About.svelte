@@ -1,228 +1,198 @@
 <script>
-  import { onMount } from "svelte";
-  import Logo from "../Components/Logo.svelte";
+  import { onMount } from "svelte"
+  import descriptionList from "../Data/MyDescription.js"
+  import CircularGraph from "../Components/CircularGraph.svelte"
+  import Container from "../Components/Grid/Container.svelte"
+  import Row from "../Components/Grid/Row.svelte"
 
-  let descriptionList = [
-    "hola",
-    "My name is Nino. I am a Software and Computer Engineer student. Currently I am in my last College year.",
-    `
-        I consider myself as a tinny Geek person. Even though I enjoy 
-        searching for new tech, those which could
-        make our lives easier, I also invest my time 
-        into big diversity of topics like Economy, Psicology and Art.
-    `,
-    `
-        My developer abilities goes right through 
-        Frontend to Backend area. However, I also 
-        have great interests into Machine Learning world.
-    `
-  ];
-
-  let currentDescription = descriptionList[0]
+  function scrollTo(section) {
+    document.getElementById(section).scrollIntoView({
+      behavior: "smooth"
+    })
+  }
+  
+  onMount(() => {
+    const myAbilities = document.getElementById("myAbilities")
+    const myAbilitiesFrontContent = document.getElementById("myAbilitiesFrontContent")
+    const myAbilitiesBackContent = document.getElementById("myAbilitiesBackContent")
+    const myAbilitiesDataBaseContent = document.getElementById("myAbilitiesDataBaseContent")
+    const myShortCard = document.getElementById("myShortCard")
+    myAbilities.style.display = "none"
+    myAbilitiesFrontContent.style.display = "none"
+    myAbilitiesBackContent.style.display = "none"
+    myAbilitiesDataBaseContent.style.display = "none"
+    myShortCard.style.display = "none"
+    setTimeout(() => {
+      myAbilities.style.display = "flex"
+      myAbilitiesFrontContent.style.display = "flex"
+      myAbilitiesBackContent.style.display = "flex"
+      myAbilitiesDataBaseContent.style.display = "flex"
+    myShortCard.style.display = "flex"
+    }, 12 * 1000)
+  })
 </script>
 
 <style>
+  :root {
+    --font-size: 16px;
+  }
+
   .bg-black {
     background-color: black;
   }
-  .main-container {
+  .min-height-100 {
     min-height: 100vh;
   }
-  .round-borders {
-    border-radius: 16px;
-  }
-  .center {
+  .flex {
     display: flex;
+  }
+  .h-center {
     justify-content: center;
+  }
+  .v-center {
     align-items: center;
   }
-
-  /* Logo keyFrames */
-  @keyframes logo-hidde {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      display: none;
-      width: 0;
-      height: 0;
-    }
+  .mt-1 {
+    margin-top: 1em;
   }
-  @-moz-keyframes logo-hidde {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      display: none;
-      width: 0;
-      height: 0;
-    }
-  }
-  @-webkit-keyframes logo-hidde {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      display: none;
-      width: 0;
-      height: 0;
-    }
-  }
-  .logo {
-    animation: logo-hidde 1s forwards;
-    animation-delay: 2s;
-    -moz-animation: logo-hidde 1s forwards;
-    -moz-animation-delay: 2s;
-    -webkit-animation: logo-hidde 1s forwards;
-    -webkit-animation-delay: 2s;
-  }
-
-  /* Image keyFrame */
-  @keyframes image-show {
-    50%,
-    100% {
-      opacity: 1;
-      height: 60vh;
-      width: 40vw;
-    }
-    100% {
-      transform: translateX(calc(128px + 16vw));
-    }
-  }
-  @-moz-keyframes image-show {
-    50%,
-    100% {
-      opacity: 1;
-      height: 60vh;
-      width: 40vw;
-    }
-    100% {
-      transform: translateX(calc(128px + 16vw));
-    }
-  }
-  @-webkit-keyframes image-show {
-    50%,
-    100% {
-      opacity: 1;
-      height: 60vh;
-      width: 40vw;
-    }
-    100% {
-      transform: translateX(calc(128px + 16vw));
-    }
-  }
-  .image {
-    animation: image-show 4s forwards;
-    animation-delay: 3s;
-    -moz-animation: image-show 4s forwards;
-    -moz-animation-delay: 3s;
-    -webkit-animation: image-show 4s forwards;
-    -webkit-animation-delay: 3s;
-
-    opacity: 0;
-    width: 0;
-    height: 0;
-    position: absolute;
-  }
-
-  #my-info {
-    max-width: 30vw;
-    position: absolute;
-    transform: translateX(calc(-16em - 3em));
-  }
-
-  @-moz-keyframes info-animate {
-    100% {
-      font-size: 16px;
-      opacity: 1;
-    }
-  }
-  @keyframes info-animate {
-    100% {
-      font-size: 16px;
-      opacity: 1;
-    }
-  }
-  @-webkit-keyframes info-animate {
-    100% {
-      font-size: 16px;
-      opacity: 1;
-    }
-  }
-  .info {
-    animation: info-animate 4s forwards;
-    animation-delay: 6s;
-
-    -moz-animation: info-animate 4s forwards;
-    -moz-animation-delay: 6s;
-
-    -webkit-animation: info-animate 4s forwards;
-    -webkit-animation-delay: 6s;
-
-    opacity: 0;
-    font-size: 0;
+  .text-white {
     color: white;
   }
 
-  /* Configuration for small screens */
+  #my-info {
+    max-width: 64vw;
+    position: absolute;
+  }
+  @media screen and (max-width: 600px) { #my-info { max-width: 90vw } }
 
-  @media screen and (max-width: 600px) {
-    /* Image keyFrame */
-    @keyframes image-show {
-      100% {
-        opacity: 1;
-        height: 40vh;
-        width: 90vw;
-        transform: translateY(-128px);
-      }
-    }
-    @-moz-keyframes image-show {
-      100% {
-        opacity: 1;
-        height: 40vh;
-        width: 90vw;
-        transform: translateY(-128px);
-      }
-    }
-    @-webkit-keyframes image-show {
-      100% {
-        opacity: 1;
-        height: 40vh;
-        width: 90vw;
-        transform: translateY(-128px);
-      }
-    }
+  .logo {
+    width: 256px;
+    height: 256px;
+  }
+  .floating-icon {
+    position: absolute;
+    bottom: 2em;
+    left: 48.5vw;
+    font-size: 32px;
+    cursor: pointer;
+    opacity: 0;
+    color: white;
+    transition-property: font-size color background-color;
+    transition-duration: 1s;
+  }
+  .floating-icon:active {
+    background-color: rgba(256, 256, 256, .4);
+    color: black;
+    padding: 4px;
+    font-size: 35px;
+    border-radius: 100px;
+    left: 48.3vw;
+  }
+  .info {
+    font-size: var(--font-size);
+  }
 
-    #my-info {
-      max-width: 90vw;
-      position: absolute;
-      transform: translateY(calc(25vh + 16px));
-    }
+  .my-image {
+      border-radius: 100%;
+      width: 128px;
+      height: 128px;
+      transition-property: width height;
+      transition-duration: .5s;
+  }
+  .my-image:hover {
+      width: 256px;
+      height: 256px;
   }
 </style>
 
-<div id="about-container" class="bg-black main-container center">
-  <!-- Logo -->
-  <!-- svelte-ignore a11y-img-redundant-alt -->
-  <img
-    class="logo round-borders"
-    src="https://i.ibb.co/5FSCmnj/Screenshot-20200728-215136.png"
-    alt="logo image" />
+<div id="min-height-100 about-container">
+  <div class="min-height-100 bg-black main-container flex h-center v-center">
+    <!-- Logo -->
+    <!-- svelte-ignore a11y-img-redundant-alt -->
+      <img
+        class="logo zoom-out-animation"
+        style="--animation-duration: 1s"
+        src="https://i.ibb.co/5FSCmnj/Screenshot-20200728-215136.png"
+        alt="logo image"
+      />
 
-  <!-- Description -->
-  <div id="my-info">
-    <div class="info">
-      <label>{ currentDescription }</label>
+    <!-- Description -->
+    <div id="my-info" class="text-white">
+      <div class="info fade-in-animation" style="--font-size: 48px; --animation-delay: 3s"> { descriptionList[0] } </div>
+      <div class="info fade-in-animation mt-1" style="--animation-delay: 5s"> { descriptionList[1] } </div>
+      <div class="info fade-in-animation mt-1" style="--animation-delay: 7s"> { descriptionList[2] } </div>
+      <div class="info fade-in-animation mt-1" style="--animation-delay: 9s"> { descriptionList[3] } </div>
     </div>
+    <i
+      class="material-icons floating-icon shake-animation"
+      style="--animation-delay: 11s"
+      on:click={() => scrollTo("myAbilities") }
+    >keyboard_arrow_down</i>
   </div>
 
-  <!-- My Image -->
-  <!-- svelte-ignore a11y-img-redundant-alt -->
-  <img
-    class="image round-borders"
-    src="https://i.ibb.co/pnP84WX/Pics-Art-05-12-12-40-28.jpg"
-    alt="my photo" />
+  <!-- My abilities -->
+  <div id="myAbilities" class="flex h-center v-center bg-black min-height-100 title text-white">
+    My Abilities
+  </div>
+
+  <div id="myAbilitiesFrontContent" class="bg-black min-height-100 flex h-center">
+      <Container>
+        <Row justify="center">
+          <label class="subtitle text-white">Frontend</label>
+        </Row>
+        <Row>
+          <CircularGraph color="#1C5496" size={200} legend="React" percentage={25}></CircularGraph>
+          <CircularGraph color="#029A3F" size={200} legend="Vue" percentage={100}></CircularGraph>
+          <CircularGraph color="#C27126" size={200} legend="Svelte" percentage={80}></CircularGraph>
+        </Row>
+        <Row>
+          <CircularGraph color="#7EB0EC" size={100} legend="Material-UI" percentage={50}></CircularGraph>
+          <CircularGraph color="#4E6E94" size={100} legend="Vuetify.js" percentage={90}></CircularGraph>
+          <CircularGraph color="#98B5E1" size={100} legend="CSS3" percentage={80}></CircularGraph>
+        </Row>
+      </Container>
+    </div>
+  <div id="myAbilitiesBackContent" class="bg-black min-height-100 flex h-center">
+      <Container>
+        <Row justify="center">
+          <label class="subtitle text-white">Backend</label>
+        </Row>
+        <Row>
+          <CircularGraph color="#1C5496" size={200} legend="Golang" percentage={20}></CircularGraph>
+          <CircularGraph color="#029A3F" size={200} legend="Python" percentage={50}></CircularGraph>
+          <CircularGraph color="#029A3F" size={200} legend="Node" percentage={70}></CircularGraph>
+        </Row>
+        <Row>
+          <CircularGraph color="#FFFFFF" size={100} legend="FastHttp" percentage={50}></CircularGraph>
+          <CircularGraph color="#FFFFFF" size={100} legend="Flask" percentage={90}></CircularGraph>
+          <CircularGraph color="#FFFFFF" size={100} legend="Express" percentage={80}></CircularGraph>
+        </Row>
+      </Container>
+    </div>
+  <div id="myAbilitiesDataBaseContent" class="bg-black min-height-100 flex h-center">
+      <Container>
+        <Row justify="center">
+          <label class="subtitle text-white">Backend</label>
+        </Row>
+        <Row>
+          <CircularGraph color="#029A3F" size={256} legend="MySQL" percentage={50}></CircularGraph>
+          <CircularGraph color="#029A3F" size={256} legend="MongoDB" percentage={80}></CircularGraph>
+        </Row>
+      </Container>
+    </div>
+  <div id="myShortCard" class="bg-black min-height-100 flex h-center v-center">
+    <Container>
+      <Row>
+        <img
+          src="https://i.ibb.co/pnP84WX/me.jpg"
+          alt="my perfil"
+          class="my-image"
+        >
+      </Row>
+      <Row> <label class="text-white" style="margin: 30px auto; font-size: 20px">Nino Mercado</label> </Row>
+      <Row> <label class="text-white" style="font-size: 14px; margin: 8px auto">Software and Computer Engineer student</label> </Row>
+      <Row> <label class="text-white" style="margin: 4px auto; font-size: 14px">github.com/njmercado</label> </Row>
+    </Container>
+
+  </div>
 </div>
