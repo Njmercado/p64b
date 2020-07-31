@@ -1,13 +1,8 @@
 Changes:
-    Components:
-        CircularGraph:
-            + Componente creado.
-            ? Este componente funciona para poder mostrar un donut graph.
-            ? Este componente muestra un porcentaje y un legend referenciando a la información.
-            ? Este componente es un canvas.
-            ? Este componente recive parametros tales como: size, color, legend y percentage
     Views:
         About:
-            ? Vista terminada.
-            + Agregado el componente CircularGraph.
-            - Eliminada imagen al inicio, junto con la animación de los mockups --> se veia fea y no funcionba.
+            + Agregado responsive
+            ? Mejorada la organización del código.
+    Data:
+        ListOfTechs:
+            ? Lista de las tecnologias conocidas.

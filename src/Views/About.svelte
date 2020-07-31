@@ -1,35 +1,38 @@
 <script>
-  import { onMount } from "svelte"
-  import descriptionList from "../Data/MyDescription.js"
-  import CircularGraph from "../Components/CircularGraph.svelte"
-  import Container from "../Components/Grid/Container.svelte"
-  import Row from "../Components/Grid/Row.svelte"
+  import { onMount } from "svelte";
+  import descriptionList from "../Data/MyDescription.js";
+  import ListOfTechs from "../Data/ListOfTechs.js";
+
+  import CircularGraph from "../Components/CircularGraph.svelte";
+  import Container from "../Components/Grid/Container.svelte";
+  import Row from "../Components/Grid/Row.svelte";
+  import Column from "../Components/Grid/Column.svelte";
 
   function scrollTo(section) {
     document.getElementById(section).scrollIntoView({
-      behavior: "smooth"
-    })
+      behavior: "smooth",
+    });
   }
-  
-  onMount(() => {
-    const myAbilities = document.getElementById("myAbilities")
-    const myAbilitiesFrontContent = document.getElementById("myAbilitiesFrontContent")
-    const myAbilitiesBackContent = document.getElementById("myAbilitiesBackContent")
-    const myAbilitiesDataBaseContent = document.getElementById("myAbilitiesDataBaseContent")
-    const myShortCard = document.getElementById("myShortCard")
-    myAbilities.style.display = "none"
-    myAbilitiesFrontContent.style.display = "none"
-    myAbilitiesBackContent.style.display = "none"
-    myAbilitiesDataBaseContent.style.display = "none"
-    myShortCard.style.display = "none"
+
+  function setDisplay(el, display) { el.style.display = display; }
+  function handleShowAbilitiesContent() {
+    const myAbilities = document.querySelectorAll("#myAbilities");
+    const myShortCard = document.getElementById("myShortCard");
+    setDisplay(myShortCard, "none")
+    myAbilities.forEach(el => setDisplay(el, "none"))
     setTimeout(() => {
-      myAbilities.style.display = "flex"
-      myAbilitiesFrontContent.style.display = "flex"
-      myAbilitiesBackContent.style.display = "flex"
-      myAbilitiesDataBaseContent.style.display = "flex"
-    myShortCard.style.display = "flex"
-    }, 12 * 1000)
-  })
+      setDisplay(myShortCard, "flex")
+      myAbilities.forEach(el => setDisplay(el, "flex"))
+    }, 12 * 1000);
+  }
+
+  const smallGraphSize = () => window.innerWidth <= 600 ? 75 : 100;
+  const normalGraphSize = () => window.innerWidth <= 600 ? 150 : 200;
+  const bigGraphSize = () => window.innerWidth <= 600 ? 200 : 256;
+
+  onMount(() => {
+    handleShowAbilitiesContent();
+  });
 </script>
 
 <style>
@@ -63,7 +66,11 @@
     max-width: 64vw;
     position: absolute;
   }
-  @media screen and (max-width: 600px) { #my-info { max-width: 90vw } }
+  @media screen and (max-width: 600px) {
+    #my-info {
+      max-width: 90vw;
+    }
+  }
 
   .logo {
     width: 256px;
@@ -81,7 +88,7 @@
     transition-duration: 1s;
   }
   .floating-icon:active {
-    background-color: rgba(256, 256, 256, .4);
+    background-color: rgba(256, 256, 256, 0.4);
     color: black;
     padding: 4px;
     font-size: 35px;
@@ -93,15 +100,15 @@
   }
 
   .my-image {
-      border-radius: 100%;
-      width: 128px;
-      height: 128px;
-      transition-property: width height;
-      transition-duration: .5s;
+    border-radius: 100%;
+    width: 128px;
+    height: 128px;
+    transition-property: width height;
+    transition-duration: 0.5s;
   }
   .my-image:hover {
-      width: 256px;
-      height: 256px;
+    width: 256px;
+    height: 256px;
   }
 </style>
 
@@ -109,7 +116,7 @@
   <div class="min-height-100 bg-black main-container flex h-center v-center">
     <!-- Logo -->
     <!-- svelte-ignore a11y-img-redundant-alt -->
-      <img
+    <img
         class="logo zoom-out-animation"
         style="--animation-duration: 1s"
         src="https://i.ibb.co/5FSCmnj/Screenshot-20200728-215136.png"
@@ -131,67 +138,109 @@
   </div>
 
   <!-- My abilities -->
-  <div id="myAbilities" class="flex h-center v-center bg-black min-height-100 title text-white">
+  <div
+    id="myAbilities"
+    class="flex h-center v-center bg-black min-height-100 title text-white">
     My Abilities
   </div>
 
-  <div id="myAbilitiesFrontContent" class="bg-black min-height-100 flex h-center">
-      <Container>
-        <Row justify="center">
-          <label class="subtitle text-white">Frontend</label>
-        </Row>
-        <Row>
-          <CircularGraph color="#1C5496" size={200} legend="React" percentage={25}></CircularGraph>
-          <CircularGraph color="#029A3F" size={200} legend="Vue" percentage={100}></CircularGraph>
-          <CircularGraph color="#C27126" size={200} legend="Svelte" percentage={80}></CircularGraph>
-        </Row>
-        <Row>
-          <CircularGraph color="#7EB0EC" size={100} legend="Material-UI" percentage={50}></CircularGraph>
-          <CircularGraph color="#4E6E94" size={100} legend="Vuetify.js" percentage={90}></CircularGraph>
-          <CircularGraph color="#98B5E1" size={100} legend="CSS3" percentage={80}></CircularGraph>
-        </Row>
-      </Container>
-    </div>
-  <div id="myAbilitiesBackContent" class="bg-black min-height-100 flex h-center">
-      <Container>
-        <Row justify="center">
-          <label class="subtitle text-white">Backend</label>
-        </Row>
-        <Row>
-          <CircularGraph color="#1C5496" size={200} legend="Golang" percentage={20}></CircularGraph>
-          <CircularGraph color="#029A3F" size={200} legend="Python" percentage={50}></CircularGraph>
-          <CircularGraph color="#029A3F" size={200} legend="Node" percentage={70}></CircularGraph>
-        </Row>
-        <Row>
-          <CircularGraph color="#FFFFFF" size={100} legend="FastHttp" percentage={50}></CircularGraph>
-          <CircularGraph color="#FFFFFF" size={100} legend="Flask" percentage={90}></CircularGraph>
-          <CircularGraph color="#FFFFFF" size={100} legend="Express" percentage={80}></CircularGraph>
-        </Row>
-      </Container>
-    </div>
-  <div id="myAbilitiesDataBaseContent" class="bg-black min-height-100 flex h-center">
-      <Container>
-        <Row justify="center">
-          <label class="subtitle text-white">Backend</label>
-        </Row>
-        <Row>
-          <CircularGraph color="#029A3F" size={256} legend="MySQL" percentage={50}></CircularGraph>
-          <CircularGraph color="#029A3F" size={256} legend="MongoDB" percentage={80}></CircularGraph>
-        </Row>
-      </Container>
-    </div>
+  <!-- My Frontend Abilities -->
+  <div
+    id="myAbilities"
+    class="bg-black min-height-100 flex h-center">
+    <Container columns={ListOfTechs.Frontend.length}>
+      <Row>
+        <label class="subtitle text-white">Frontend</label>
+      </Row>
+
+      {#each ListOfTechs.Frontend as { tech, techPercentage, color, framework, frameworkPercentage, frameworkColor }}
+        <Column xs={ListOfTechs.Frontend.length}>
+          <CircularGraph
+            {color}
+            size={normalGraphSize()}
+            legend={tech}
+            percentage={techPercentage} />
+          <div class="mt-1" />
+          <CircularGraph
+            color={frameworkColor}
+            size={smallGraphSize()}
+            legend={framework}
+            percentage={frameworkPercentage} />
+        </Column>
+      {/each}
+    </Container>
+  </div>
+
+  <!-- My Backend Abilities -->
+  <div
+    id="myAbilities"
+    class="bg-black min-height-100 flex h-center">
+    <Container columns={ListOfTechs.Backend.length}>
+      <Row>
+        <label class="subtitle text-white">Backend</label>
+      </Row>
+
+      {#each ListOfTechs.Backend as { tech, techPercentage, color, framework, frameworkPercentage, frameworkColor }}
+        <Column xs={ListOfTechs.Backend.length}>
+          <CircularGraph
+            {color}
+            size={normalGraphSize()}
+            legend={tech}
+            percentage={techPercentage} />
+          <div class="mt-1" />
+          <CircularGraph
+            color={frameworkColor}
+            size={smallGraphSize()}
+            legend={framework}
+            percentage={frameworkPercentage} />
+        </Column>
+      {/each}
+    </Container>
+  </div>
+
+  <!-- My DataBase Abilities -->
+  <div
+    id="myAbilities"
+    class="bg-black min-height-100 flex h-center">
+    <Container columns={ListOfTechs.DataBase.length}>
+      <Row>
+        <label class="subtitle text-white">Backend</label>
+      </Row>
+      {#each ListOfTechs.DataBase as { tech, techPercentage, color }}
+        <Column xs={ListOfTechs.DataBase.length}>
+          <CircularGraph
+            {color}
+            size={bigGraphSize()}
+            legend={tech}
+            percentage={techPercentage} />
+        </Column>
+      {/each}
+    </Container>
+  </div>
+
   <div id="myShortCard" class="bg-black min-height-100 flex h-center v-center">
     <Container>
       <Row>
         <img
           src="https://i.ibb.co/pnP84WX/me.jpg"
           alt="my perfil"
-          class="my-image"
-        >
+          class="my-image" />
       </Row>
-      <Row> <label class="text-white" style="margin: 30px auto; font-size: 20px">Nino Mercado</label> </Row>
-      <Row> <label class="text-white" style="font-size: 14px; margin: 8px auto">Software and Computer Engineer student</label> </Row>
-      <Row> <label class="text-white" style="margin: 4px auto; font-size: 14px">github.com/njmercado</label> </Row>
+      <Row>
+        <label class="text-white" style="margin: 30px auto; font-size: 20px">
+          Nino Mercado
+        </label>
+      </Row>
+      <Row>
+        <label class="text-white" style="font-size: 14px; margin: 8px auto">
+          Software and Computer Engineer student
+        </label>
+      </Row>
+      <Row>
+        <label class="text-white" style="margin: 4px auto; font-size: 14px">
+          github.com/njmercado
+        </label>
+      </Row>
     </Container>
 
   </div>
