@@ -1,4 +1,5 @@
 <script>
+  import { push } from 'svelte-spa-router'
   import Column from "../Components/Grid/Column.svelte";
   import Container from "../Components/Grid/Container.svelte";
   import Row from "../Components/Grid/Row.svelte";
@@ -10,6 +11,8 @@
   import TextArea from "../Components/TextArea.svelte";
   import RouterFloatingButton from "../Components/RouterFloatingButton.svelte"
   import ListOfWorks from "../Data/ListOfWorks.js";
+
+  import MyCardInfo from '../Components/MyCardInfo.svelte'
 </script>
 
 <style>
@@ -86,6 +89,7 @@
       <h1 class="text title">THIS IS P64B</h1>
       <h3 class="text italic">just another</h3>
       <h2 class="text subtitle">Full Stack Web Developer</h2>
+      <Button textColor="rgba(0, 0, 0, .8)" round="16px" click={() => push('/about')}>more</Button>
     </Column>
     <Column height="100vh" columns={1} xs={2}>
       <Logo width={384} height={384} weight={4} />
@@ -117,23 +121,6 @@
 
   <!-- Contact Me -->
   <Column height="100vh" style="background-color: black">
-    <Container columns={1}>
-      <div
-        style=" display: grid; grid-template-columns: repeat(auto-fit,
-        minmax(320px, 1fr)); max-width: 80vw; ">
-        <TextField
-          rounded={true}
-          dense={true}
-          icon="email"
-          placeholder="email" />
-        <TextField
-          rounded={true}
-          dense={true}
-          icon={'book'}
-          placeholder="signature" />
-      </div>
-      <TextArea icon="article" placeholder="description" />
-    </Container>
-      <Button round="16px" textColor="rgba(0, 0, 0, .6)" size="3em">send</Button>
+    <MyCardInfo id="myCard"></MyCardInfo>
   </Column>
 </main>

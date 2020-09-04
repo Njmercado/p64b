@@ -16,15 +16,18 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
+* {
+    font-family: 'Baloo Tamma 2', cursive;
+}
+
+/*Links*/
 a {
   color: rgb(0, 100, 200);
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
-
 a:visited {
   color: rgb(0, 80, 160);
 }
@@ -33,6 +36,7 @@ label {
   display: block;
 }
 
+/*Elements*/
 input,
 button,
 select,
@@ -45,37 +49,35 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 2px;
 }
-
 input:disabled {
   color: #ccc;
 }
-
 input[type="range"] {
   height: 0;
 }
-
 button {
   color: #333;
   background-color: #f4f4f4;
   outline: none;
 }
-
 button:disabled {
   color: #999;
 }
-
 button:not(:disabled):active {
   background-color: #ddd;
 }
-
 button:focus {
   border-color: #666;
 }
 
+/*Text*/
 .text {
   color: white;
   font-weight: 400;
   font-size: 1em;
+  text-align: center;
+}
+.text-center {
   text-align: center;
 }
 .italic {
@@ -86,4 +88,86 @@ button:focus {
 }
 .subtitle {
   font-size: 2em;
+}
+
+/*Font*/
+.font-size-extrabigger {
+  font-size: calc(3em + 1vw);
+}
+.font-size-extrabig {
+  font-size: (2.5em + 1vw);
+}
+.font-size-bigger {
+  font-size: calc( 2em + 1vw);
+}
+.font-size-big {
+  font-size: calc( 1.5em + 1vw);
+}
+.font-size-small {
+  font-size: calc( 1em + 1vw);
+}
+.font-size-smaller{
+  font-size: calc( .5em + 1vw);
+}
+.font-size-extrasmaller{
+  font-size: calc( 0em + 1vw);
+}
+
+/*Display - flex*/
+.flex {
+  display: flex;
+}
+.v-flex-center {
+  align-items: center;
+}
+.h-flex-center {
+  justify-content: center;
+}
+.h-flex-spacer {
+  justify-content: space-around;
+}
+.flex-column {
+  flex-direction: column;
+}
+.v-flex-column-spacer {
+  justify-content: space-around;
+}
+.h-flex-column-center {
+  align-items: center;
+}
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+/*Margin*/
+.mt-1 {
+  margin-top: .5em;
+}
+.mt-2 {
+  margin-top: 1em;
+}
+.mt-3 {
+  margin-top: 1.5em;
+}
+.mt-4 {
+  margin-top: 2em;
+}
+.mt-5 {
+  margin-top: 2.5em;
+}
+.mt-6 {
+  margin-top: 3em;
+}
+.mt-7 {
+  margin-top: 3.5em;
+}
+.mt-8 {
+  margin-top: 4.5em;
+}
+.mt-9 {
+  margin-top: 5em;
+}
+.mt-10 {
+  margin-top: 5.5em;
 }

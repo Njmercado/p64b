@@ -8,6 +8,13 @@
   import Row from "../Components/Grid/Row.svelte";
   import Column from "../Components/Grid/Column.svelte";
 
+  import MyCardInfo from '../Components/MyCardInfo.svelte'
+
+  import RouterFloatingButton from "../Components/RouterFloatingButton.svelte"
+
+  //Icons
+  import MdKeyboardArrowDown from 'svelte-icons/md/MdKeyboardArrowDown.svelte'
+
   function scrollTo(section) {
     document.getElementById(section).scrollIntoView({
       behavior: "smooth",
@@ -45,18 +52,6 @@
   }
   .min-height-100 {
     min-height: 100vh;
-  }
-  .flex {
-    display: flex;
-  }
-  .h-center {
-    justify-content: center;
-  }
-  .v-center {
-    align-items: center;
-  }
-  .mt-1 {
-    margin-top: 1em;
   }
   .text-white {
     color: white;
@@ -98,22 +93,13 @@
   .info {
     font-size: var(--font-size);
   }
-
-  .my-image {
-    border-radius: 100%;
-    width: 128px;
-    height: 128px;
-    transition-property: width height;
-    transition-duration: 0.5s;
-  }
-  .my-image:hover {
-    width: 256px;
-    height: 256px;
-  }
 </style>
 
-<div id="min-height-100 about-container">
-  <div class="min-height-100 bg-black main-container flex h-center v-center">
+<div id="about-page">
+
+  <RouterFloatingButton></RouterFloatingButton>
+
+  <div class="min-height-100 bg-black main-container flex h-flex-center v-flex-center">
     <!-- Logo -->
     <!-- svelte-ignore a11y-img-redundant-alt -->
     <img
@@ -130,24 +116,26 @@
       <div class="info fade-in-animation mt-1" style="--animation-delay: 7s"> { descriptionList[2] } </div>
       <div class="info fade-in-animation mt-1" style="--animation-delay: 9s"> { descriptionList[3] } </div>
     </div>
-    <i
-      class="material-icons floating-icon shake-animation"
-      style="--animation-delay: 11s"
+    <div
+      class="floating-icon shake-animation"
+      style="--animation-delay: 11s; width: 32px; height: 32px;"
       on:click={() => scrollTo("myAbilities") }
-    >keyboard_arrow_down</i>
+    >
+      <MdKeyboardArrowDown />
+    </div>
   </div>
 
   <!-- My abilities -->
   <div
     id="myAbilities"
-    class="flex h-center v-center bg-black min-height-100 title text-white">
+    class="flex h-flex-center v-flex-center bg-black min-height-100 title text-white">
     My Abilities
   </div>
 
   <!-- My Frontend Abilities -->
   <div
     id="myAbilities"
-    class="bg-black min-height-100 flex h-center">
+    class="bg-black min-height-100 flex h-flex-center">
     <Container columns={ListOfTechs.Frontend.length}>
       <Row>
         <label class="subtitle text-white">Frontend</label>
@@ -159,12 +147,14 @@
             {color}
             size={normalGraphSize()}
             legend={tech}
+            showPercentage={false}
             percentage={techPercentage} />
           <div class="mt-1" />
           <CircularGraph
             color={frameworkColor}
             size={smallGraphSize()}
             legend={framework}
+            showPercentage={false}
             percentage={frameworkPercentage} />
         </Column>
       {/each}
@@ -174,7 +164,7 @@
   <!-- My Backend Abilities -->
   <div
     id="myAbilities"
-    class="bg-black min-height-100 flex h-center">
+    class="bg-black min-height-100 flex h-flex-center">
     <Container columns={ListOfTechs.Backend.length}>
       <Row>
         <label class="subtitle text-white">Backend</label>
@@ -186,12 +176,14 @@
             {color}
             size={normalGraphSize()}
             legend={tech}
+            showPercentage={false}
             percentage={techPercentage} />
           <div class="mt-1" />
           <CircularGraph
             color={frameworkColor}
             size={smallGraphSize()}
             legend={framework}
+            showPercentage={false}
             percentage={frameworkPercentage} />
         </Column>
       {/each}
@@ -201,7 +193,7 @@
   <!-- My DataBase Abilities -->
   <div
     id="myAbilities"
-    class="bg-black min-height-100 flex h-center">
+    class="bg-black min-height-100 flex h-flex-center">
     <Container columns={ListOfTechs.DataBase.length}>
       <Row>
         <label class="subtitle text-white">Backend</label>
@@ -212,36 +204,12 @@
             {color}
             size={bigGraphSize()}
             legend={tech}
+            showPercentage={false}
             percentage={techPercentage} />
         </Column>
       {/each}
     </Container>
   </div>
 
-  <div id="myShortCard" class="bg-black min-height-100 flex h-center v-center">
-    <Container>
-      <Row>
-        <img
-          src="https://i.ibb.co/pnP84WX/me.jpg"
-          alt="my perfil"
-          class="my-image" />
-      </Row>
-      <Row>
-        <label class="text-white" style="margin: 30px auto; font-size: 20px">
-          Nino Mercado
-        </label>
-      </Row>
-      <Row>
-        <label class="text-white" style="font-size: 14px; margin: 8px auto">
-          Software and Computer Engineer student
-        </label>
-      </Row>
-      <Row>
-        <label class="text-white" style="margin: 4px auto; font-size: 14px">
-          github.com/njmercado
-        </label>
-      </Row>
-    </Container>
-
-  </div>
+  <MyCardInfo id="myShortCard"></MyCardInfo>
 </div>

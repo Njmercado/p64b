@@ -1,4 +1,9 @@
 <script>
+    import MdMenu from 'svelte-icons/md/MdMenu.svelte'
+    import MdFace from 'svelte-icons/md/MdFace.svelte'
+    import MdHome from 'svelte-icons/md/MdHome.svelte'
+    import MdWork from 'svelte-icons/md/MdWork.svelte'
+
     import { push } from 'svelte-spa-router'
 
     function openRoute(route) {
@@ -126,29 +131,46 @@
     .btn {
         box-shadow: 2px 1px 2px rgba(0, 0, 0, .2);
     }
+
+    .icon-big {
+        width: 32px;
+        height: 32px;
+    }
+    .icon-small {
+        width: 25px;
+        height: 25px;
+    }
 </style>
 
 <div class="floating-router-container circle-border center">
     <div class="floating-button circle-border pointer z-index-2 center absolute btn">
-        <i class="material-icons">menu</i>
+        <div class="icon-big">
+            <MdMenu />
+        </div>
     </div>
 
     <div
         class="floating-router-item-1 circle-border absolute pointer z-index-1 center btn"
         on:click={() => openRoute("/")}
     >
-        <i class="material-icons">home</i>
+        <div class="icon-small">
+            <MdHome/>
+        </div>
     </div>
     <div
         class="floating-router-item-2 circle-border absolute pointer z-index-1 center btn"
         on:click={() => openRoute("/works")}
     >
-        <i class="material-icons">work</i>
+        <div class="icon-small">
+            <MdWork />
+        </div>
     </div>
     <div
         class="floating-router-item-3 circle-border absolute pointer z-index-1 center btn"
         on:click={() => openRoute("/about")}
     >
-        <i class="material-icons">face</i>
+        <div class="icon-small">
+            <MdFace />
+        </div>
     </div>
 </div>

@@ -1,8 +1,29 @@
 Changes:
+    General:
+        + Installed svelte-icon package. As the name says, this package is used to use icons, but from differents sources.
+        ? I'll try to write my commits in english, just if someone else wanna read them. Why? because i can, period.
+    TODOS:
+        * Add link and click efect to icons in my info card.
+        ? Make tech, on about page, responsive. I mean, organize them on small screen not reduce their sizes.
+        * Start 'Wrong page' design.
     Views:
-        About:
-            + Agregado responsive
-            ? Mejorada la organización del código.
-    Data:
-        ListOfTechs:
-            ? Lista de las tecnologias conocidas.
+        Works:
+            + Page created.
+            ? This page gonna list my works.
+        Works:
+            + Folder created.
+            ? This folder gonna save all those files related with my works.
+            Kribi:
+                + File created.
+                ? This file goona show all the information related to thid project.
+                ? Information like: Techs, Photos, General information to describe it.
+    Components:
+        MyCardInfo:
+            + Component created.
+            ? This component is used to show a brief information about me. Just show my name, bachelor and my social medias.
+        PageTransitions:
+            + Carpeta creada.
+            ? This folder gonna keep inside all those files, components, related to the transitions between pages.
+        CircularGraph:
+            + Added param.
+            ? Now this component has the possibility to decide if the user wanna see the percentage or not.

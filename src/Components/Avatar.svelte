@@ -13,20 +13,19 @@
     onMount(() => {
         let avatar = document.getElementById(id)
         let avatarImage = avatar.childNodes[src.length > 0 ? 1 : 0]
-        const avatarImageWidth = parseInt(width.substring(0, width.length - 2))/2
 
         avatar.style.backgroundColor = color
         avatar.style.width = width
         avatar.style.height = height
 
-        avatarImage.style.width = `${avatarImageWidth}em`
+        avatarImage.style.width = `70%`
+        avatarImage.style.height = `70%`
+        avatarImage.style.objectFit = "cover"
     })
 </script>
 
 <style>
   .avatar{
-    height: 8em;
-    width: 8em;
     background-color: white;
     border-radius: 100%;
     display: flex;
@@ -38,7 +37,10 @@
   }
 
   .avatar > img {
-    width: 4em;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 </style>
 
@@ -50,5 +52,5 @@
     id={id}
 >
     <slot><!-- optional fallback --></slot>
-    <img src={src}>
+    <img src={src} alt="work icon">
 </div>

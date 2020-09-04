@@ -6,6 +6,7 @@
     export let percentage = 100
     export let size = 100
     export let legend= ""
+    export let showPercentage = true
 
     function handleCanvasText(canvas, fontSize) {
         let ctx = canvas.getContext("2d")
@@ -36,7 +37,7 @@
     onMount(() => {
         let canvas = document.getElementById(id)
         handleCanvasStyles(canvas, size)
-        handleCanvasText(canvas, size)
+        if(showPercentage) handleCanvasText(canvas, size)
     })
 </script>
 

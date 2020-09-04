@@ -1,6 +1,7 @@
 export default [
     {
         title: 'Kribí',
+        urlArticle: '/works/kribi',
         src: 'https://i.ibb.co/cwDhBYj/icono2.png',
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum id commodi rovident asperiores expedita corrupti nulla dolorum saepe, possimus laboriosam aliquid nisi vero quisquam praesentium suscipit! Cupiditate magni ipsa sapiente.',
         techs: ['Vuejs', 'Vuetifyjs', 'Nodejs', 'Expressjs', 'Mongodb'],
@@ -9,6 +10,7 @@ export default [
     },
     {
         title: 'Ola',
+        urlArticle: '/works/ola',
         src: 'https://i.ibb.co/9nKzPKd/OLa.png',
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum id commodi rovident asperiores expedita corrupti nulla dolorum saepe, possimus laboriosam aliquid nisi vero quisquam praesentium suscipit! Cupiditate magni ipsa sapiente.',
         techs: ['Vuejs', 'Vuetifyjs', 'Golang', 'Mongodb'],
@@ -17,6 +19,7 @@ export default [
     },
     {
         title: 'P64B',
+        urlArticle: '/works/p64b',
         src: 'https://i.ibb.co/DfC3hkv/Captura-de-pantalla-de-2020-07-21-14-25-45.png',
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum id commodi rovident asperiores expedita corrupti nulla dolorum saepe, possimus laboriosam aliquid nisi vero quisquam praesentium suscipit! Cupiditate magni ipsa sapiente.',
         techs: ['Svelte', 'CSS3'],

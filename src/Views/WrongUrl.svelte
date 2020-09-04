@@ -1,3 +1,3 @@
 <div>
-    hola mundo p
+    Wrong page. It looks than you are a little lost.
 </div>
