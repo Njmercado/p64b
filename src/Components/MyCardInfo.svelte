@@ -13,9 +13,6 @@
 </script>
 
 <style>
-  .bg-black {
-    background-color: black;
-  }
   .min-height-100 {
     min-height: 100vh;
   }
@@ -55,16 +52,16 @@
       </div>
     </Row>
     <Row>
-      <label class="text-white" style="margin: 30px auto 0 auto; font-size: 20px">
+      <label class="text-white font-size-small mt-1">
         Nino Mercado
       </label>
     </Row>
     <Row>
-      <label class="text-white" style="font-size: 16px; margin: 8px auto">
+      <label class="text-white font-size-smaller mt-2">
         Software & Computer Engineer ( student )
       </label>
     </Row>
-    <Row>
+    <Row style="margin-top: 8px">
       <div class="icon-big text-white">
         <TiSocialInstagram />
       </div>
