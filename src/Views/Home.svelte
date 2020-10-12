@@ -8,6 +8,12 @@
   import Card from "../Components/Card.svelte";
   import RouterFloatingButton from "../Components/RouterFloatingButton.svelte";
   import ListOfWorks from "../Data/ListOfWorks.js";
+  import {short_description as techs} from "../Data/ListOfTechs.js";
+
+  //Icons 
+  import MdMailOutline from 'svelte-icons/md/MdMailOutline.svelte'
+  import MdFileDownload from 'svelte-icons/md/MdFileDownload.svelte'
+  import FaPaypal from 'svelte-icons/fa/FaPaypal.svelte'
 
   import MyCardInfo from "../Components/MyCardInfo.svelte";
 </script>
@@ -75,32 +81,28 @@
         have great interests into Machine Learning field. <br/>
         This are some of the techs than i used to use in my daily work:
       </div>
-      <div class="grid grid-4-columns">
-        <div class="xs-4 sm-2 chip chip-sm font-bold">HTML</div>
-        <div class="xs-4 sm-2 chip chip-sm font-bold">CSS</div>
-        <div class="xs-4 sm-2 chip chip-sm font-bold">Tailwind</div>
-        <div class="xs-4 sm-2 chip chip-sm font-bold">Vue</div>
-        <div class="xs-4 sm-2 chip chip-sm font-bold">Vuetify</div>
-        <div class="xs-4 sm-2 chip chip-sm font-bold">Svelte</div>
-        <div class="xs-4 sm-2 chip chip-sm font-bold">React</div>
-        <div class="xs-4 sm-2 chip chip-sm font-bold">Express</div>
-        <div class="xs-4 sm-2 chip chip-sm font-bold">FastAPI</div>
-        <div class="xs-4 sm-2 chip chip-sm font-bold">Golang</div>
-        <div class="xs-4 sm-2 chip chip-sm font-bold">MongoDB</div>
-        <div class="xs-4 sm-2 chip chip-sm font-bold">MySql</div>
+
+      <!-- List of Techs than i know -->
+      <div class="mt-4 grid grid-4-columns">
+        {#each techs as tech}
+          <div class="xs-4 sm-2 chip chip-sm font-bold">{tech}</div>
+        {/each}
       </div>
       <div class="text-white font-size-smaller mt-4">
         I consider myself as a tinny Geek person. 
         Even though I enjoy searching for new tech, those which could make our lives easier, 
         I also invest my time into big diversity of topics like Economy, Psicology and Art.
       </div>
+
+      <!-- Action buttons -->
       <div class="flex h-flex-start mt-4">
         <Button
           textColor="rgba(0, 0, 0, .8)"
           round="16px"
           textSize="calc(12px + .8vw)"
         >
-          <div class="font-bolder">Email me</div>
+          <div class="flex mr-1" style="max-width: 25px; max-height: 25px"> <MdMailOutline/> </div>
+          <div class="font-bolder flex flex-center">Email me</div>
         </Button>
         <div class="ml-2"></div>
         <Button
@@ -108,11 +110,13 @@
           round="16px"
           textSize="calc(12px + .8vw)"
         >
-          <div class="font-bolder">Download my resume</div>
+          <div class="flex mr-1" style="max-width: 25px; max-height: 25px"> <MdFileDownload/> </div>
+          <div class="font-bolder flex flex-center">Download my resume</div>
         </Button>
       </div>
     </div>
 
+    <!-- buy a coffe block -->
     <div class="mt-8 text-white text-left">
       <div class="font-size-big text-white mt-2">What if you buy a coffe? :)</div>
       <div class="flex h-flex-start mt-4">
@@ -121,7 +125,8 @@
           round="16px"
           textSize="calc(12px + .8vw)"
         >
-          <div class="font-bolder">Paypal</div>
+          <div class="flex mr-1" style="max-width: 25px; max-height: 25px"> <FaPaypal/> </div>
+          <div class="font-bolder flex flex-center">Paypal</div>
         </Button>
       </div>
     </div>

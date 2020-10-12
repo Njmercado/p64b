@@ -5,27 +5,12 @@
   export let textColor = 'black'
   export let textSize = ''
   export let round = "0px";
-  export let icon = "";
-  export let iconColor = 'black';
   export let size = ''
 
   export let target = '_blank'
   export let hrfe= ''
 
   export let click = ''
-
-  function addIcon(parent, icon) {
-      let buttonBtn = parent.firstChild;
-      let icon_container = document.createElement('span')
-
-      icon_container.style.marginRight = '8px'
-      icon_container.style.color = iconColor
-
-      icon_container.classList.add('material-icons')
-      icon_container.innerHTML=icon
-
-      button.insertBefore(icon_container, buttonBtn)
-  }
 
   function handleHRFE(button, url, target) {
     button.addEventListener('click', () => {
@@ -63,7 +48,6 @@
     if(textColor !== 'black') { setTextColor(button, textColor) }
     if(textSize.length > 0) setTextSize(button, textSize)
     if(size.length > 0) setSize(button, size)
-    if(icon.length > 0){ addIcon(button, icon) }
     if(hrfe.length > 0) { handleHRFE(button, hrfe, target) }
     if(click) { handleOnClick(button, click) }
   });
@@ -105,7 +89,7 @@
 </style>
 
 <div {id} class="btn-container">
-  <div class="btn">
+  <div class="btn flex flex-center">
     <slot />
   </div>
 </div>

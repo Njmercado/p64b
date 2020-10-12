@@ -4,16 +4,18 @@ Changes:
         ? Make tech, on about page, responsive. I mean, organize them on small screen not reduce their sizes.
         * Start 'Wrong page' design.
     public:
-        ? Now the set of stylesheets, with some kind of relation, has been grouped into another files inside stylesheets folder.
         stylesheets:
-            Components:
-                + Folder created.
-                ? This folder gonna save those css component which will be used by the project itself.
-    Views:
+            Margin:
+                + Added new css styles. Styles to handle margin and padding.
+    General:
+        - Deleted the cdn of material icons
+    Data:
+        ListOfTechs:
+            + Added list of the techs than i know
+    View:
         Home:
-            + Added my description.
-        About me:
-            - View deleted --> this view has been moved to the home one.
+            + Added icons to buttons
+            ? Updated code, now is easier to read.
     Components:
-        Chip:
-            - Component deleted -> This component was replaced by stylesheets component
+        Button:
+            - Deleted icon param.
