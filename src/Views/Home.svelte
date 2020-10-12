@@ -136,7 +136,7 @@
     <!-- List of Works -->
     <div class="flex-container h-flex-center v-flex-center">
       <Container columns="3">
-        {#each ListOfWorks as { title, src, description, techs, background, projectDescriptionSite, site }, index}
+        {#each ListOfWorks.slice(0, 3) as { title, src, description, techs, background, projectDescriptionSite, site }, index}
           <Column columns="3" xs="3" sm="3" md="1" lg="1" xl="1">
             <div class="hover-translateY" style="--translate-y: -16px" on:click={() => push(projectDescriptionSite)}>
               <Card color={background} textColor="white" size="calc(10em + 16vw)">
