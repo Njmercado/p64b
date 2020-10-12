@@ -18,6 +18,7 @@
         height: 64px;
 
         position: fixed;
+        z-index: 9999;
         top: 2em;
         left: 2em;
 

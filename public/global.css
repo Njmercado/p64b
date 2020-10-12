@@ -1,4 +1,12 @@
-@import "./Animations.css";
+@import "./stylesheets/Animations.css";
+@import "./stylesheets/Text.css";
+@import "./stylesheets/Grid.css";
+@import "./stylesheets/Margin.css";
+@import "./stylesheets/Colors.css";
+@import "./stylesheets/Size.css";
+
+/* Components */
+@import "./stylesheets/Components/Chip.css";
 
 html,
 body {
@@ -75,150 +83,4 @@ button:not(:disabled):active {
 }
 button:focus {
   border-color: #666;
-}
-
-/*Text*/
-.text-center {
-  text-align: center;
-}
-.italic {
-  font-style: italic;
-}
-
-/*Font*/
-.font-size-extrabigger {
-  font-size: calc(3em + 1vw);
-}
-.font-size-extrabig {
-  font-size: (2.5em + 1vw);
-}
-.font-size-bigger {
-  font-size: calc( 2em + 1vw);
-}
-.font-size-big {
-  font-size: calc( 1.5em + 1vw);
-}
-.font-size-small {
-  font-size: calc( 1em + 1vw);
-}
-.font-size-smaller{
-  font-size: calc( .5em + 1vw);
-}
-.font-size-extrasmaller{
-  font-size: calc( 0em + 1vw);
-}
-.font-100 {
-  font-weight: 100;
-}
-.font-200 {
-  font-weight: 200;
-}
-.font-300 {
-  font-weight: 300;
-}
-.font-400 {
-  font-weight: 400;
-}
-.font-bold {
-  font-weight: bold;
-}
-.font-bolder {
-  font-weight: bolder;
-}
-
-/*Display - flex*/
-.flex {
-  display: flex;
-}
-.v-flex-center {
-  align-items: center;
-}
-.h-flex-center {
-  justify-content: center;
-}
-.h-flex-spacer {
-  justify-content: space-around;
-}
-.flex-column {
-  flex-direction: column;
-}
-.v-flex-column-spacer {
-  justify-content: space-around;
-}
-.h-flex-column-center {
-  align-items: center;
-}
-.flex-center {
-  align-items: center;
-  justify-content: center;
-}
-
-/*Margin*/
-.mt-1 {
-  margin-top: .5em;
-}
-.mt-2 {
-  margin-top: 1em;
-}
-.mt-3 {
-  margin-top: 1.5em;
-}
-.mt-4 {
-  margin-top: 2em;
-}
-.mt-5 {
-  margin-top: 2.5em;
-}
-.mt-6 {
-  margin-top: 3em;
-}
-.mt-7 {
-  margin-top: 3.5em;
-}
-.mt-8 {
-  margin-top: 4.5em;
-}
-.mt-9 {
-  margin-top: 5em;
-}
-.mt-10 {
-  margin-top: 5.5em;
-}
-.ml-1 {
-  margin-left: .5em;
-}
-.ml-2 {
-  margin-left: 1em;
-}
-.ml-3 {
-  margin-left: 1.5em;
-}
-.ml-4 {
-  margin-left: 2em;
-}
-.ml-5 {
-  margin-left: 2.5em;
-}
-.ml-6 {
-  margin-left: 3em;
-}
-.ml-7 {
-  margin-left: 3.5em;
-}
-.ml-8 {
-  margin-left: 4.5em;
-}
-.ml-9 {
-  margin-left: 5em;
-}
-.ml-10 {
-  margin-left: 5.5em;
-}
-
-/* Colors */
-.bg-black {
-  background-color: rgba(10, 10, 10);
-}
-.text-white {
-  color: white;
 }

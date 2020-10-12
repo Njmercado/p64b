@@ -1,0 +1,123 @@
+.h-1 {
+    height: 10vh;
+}
+.h-2 {
+    height: 20vh;
+}
+.h-3 {
+    height: 30vh;
+}
+.h-4 {
+    height: 40vh;
+}
+.h-5 {
+    height: 50vh;
+}
+.h-6 {
+    height: 60vh;
+}
+.h-7 {
+    height: 70vh;
+}
+.h-8 {
+    height: 80vh;
+}
+.h-9 {
+    height: 90vh;
+}
+.h-screen {
+    height: 80vh;
+}
+.min-h-1 {
+    height: 10vh;
+}
+.min-h-2 {
+    height: 20vh;
+}
+.min-h-3 {
+    height: 30vh;
+}
+.min-h-4 {
+    height: 40vh;
+}
+.min-h-5 {
+    height: 50vh;
+}
+.min-h-6 {
+    height: 60vh;
+}
+.min-h-7 {
+    height: 70vh;
+}
+.min-h-8 {
+    height: 80vh;
+}
+.min-h-9 {
+    height: 90vh;
+}
+.min-h-screen {
+    height: 80vh;
+}
+
+/* Width */
+.w-1 {
+    width: 10vw;
+}
+.w-2 {
+    width: 20vw;
+}
+.w-3 {
+    width: 30vw;
+}
+.w-4 {
+    width: 40vw;
+}
+.w-5 {
+    width: 50vw;
+}
+.w-6 {
+    width: 60vw;
+}
+.w-7 {
+    width: 70vw;
+}
+.w-8 {
+    width: 80vw;
+}
+.w-9 {
+    width: 90vw;
+}
+.w-screen {
+    width: 100vw;
+}
+
+.min-w-1 {
+    width: 10vw;
+}
+.min-w-2 {
+    width: 20vw;
+}
+.min-w-3 {
+    width: 30vw;
+}
+.min-w-4 {
+    width: 40vw;
+}
+.min-w-5 {
+    width: 50vw;
+}
+.min-w-6 {
+    width: 60vw;
+}
+.min-w-7 {
+    width: 70vw;
+}
+.min-w-8 {
+    width: 80vw;
+}
+.min-w-9 {
+    width: 90vw;
+}
+.min-w-screen {
+    width: 100vw;
+}

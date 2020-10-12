@@ -1,7 +1,6 @@
 <script>
   import Container from '../Components/Grid/Container.svelte'
   import Row from '../Components/Grid/Row.svelte'
-  import Column from '../Components/Grid/Column.svelte'
 
   //Icons
   import TiSocialInstagram from 'svelte-icons/ti/TiSocialInstagram.svelte'

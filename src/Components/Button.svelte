@@ -16,15 +16,15 @@
 
   function addIcon(parent, icon) {
       let buttonBtn = parent.firstChild;
-      let icons = document.createElement('span')
+      let icon_container = document.createElement('span')
 
-      icons.style.marginRight = '8px'
-      icons.style.color = iconColor
+      icon_container.style.marginRight = '8px'
+      icon_container.style.color = iconColor
 
-      icons.classList.add('material-icons')
-      icons.innerHTML=icon
+      icon_container.classList.add('material-icons')
+      icon_container.innerHTML=icon
 
-      button.insertBefore(icons, buttonBtn)
+      button.insertBefore(icon_container, buttonBtn)
   }
 
   function handleHRFE(button, url, target) {
@@ -77,7 +77,6 @@
     opacity: 1;
 
     display: flex;
-    margin: 0 auto;
     padding: 4px 16px;
 
     cursor: pointer;

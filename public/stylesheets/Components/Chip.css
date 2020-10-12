@@ -1,0 +1,31 @@
+  .chip {
+    text-align: center;
+    min-width: 4em;
+    background-color: white;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    color: black;
+    border-radius: 100px;
+    margin: 4px;
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+
+  .chip-xs {
+    font-size: calc(.1vw + 1em)
+  }
+
+  .chip-sm {
+    font-size: calc(.2vw + 1em)
+  }
+
+  .chip-md {
+    font-size: calc(.4vw + 1em)
+  }
+
+  .chip-lg {
+    font-size: calc(.6vw + 1em)
+  }
+
+  .chip-xl {
+    font-size: calc(.8vw + 1em)
+  }

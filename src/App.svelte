@@ -3,7 +3,6 @@
 
     // Routes
     import Home from './Views/Home.svelte'
-    import About from './Views/About.svelte'
     import Works from './Views/Works.svelte'
     import KribiWork from './Views/Works/Kribi.svelte'
     import WrongUrl from './Views/WrongUrl.svelte'
@@ -14,7 +13,6 @@
 
     const auxRoutes = {
         '/': Home,
-        '/about': About,
         '/works': Works,
     }
 

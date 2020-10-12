@@ -41,24 +41,17 @@
     margin: 8px;
     cursor: pointer;
     padding: 4px;
-    -webkit-transition-property: border-radius transform;
-    -moz-transition-property: border-radius transform;
-    -o-transition-property: border-radius transform;
-    transition-property: border-radius transform;
+    -webkit-transition-property: box-shadow;
+    -moz-transition-property: box-shadow;
+    -o-transition-property: box-shadow;
+    transition-property: box-shadow;
     -webkit-transition-duration: 0.8s;
     -moz-transition-duration: 0.8s;
     -o-transition-duration: 0.8s;
     transition-duration: 0.8s;
   }
   .card:hover {
-    border-radius: 64px;
-    transform: translateY(-32px);
-  }
-  .card:hover .card-content {
-    display: none;
-  }
-  .card:hover .card-subtitle, .card-title {
-    font-size: 200%;
+    box-shadow: 4px 6px 6px 4px rgba(0, 0, 0, 0.4);
   }
   .card > div {
     height: 100%;
@@ -73,12 +66,12 @@
     font-size: initial;
   }
   .card-content {
-    display: block;
     font-weight: 300;
     font-size: small;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
 </style>
 
 <div {id} class="card">
