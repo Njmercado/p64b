@@ -12,6 +12,9 @@
 .v-flex-center {
   align-items: center;
 }
+.v-flex-end {
+  align-items: flex-end;
+}
 .h-flex-center {
   justify-content: center;
 }
