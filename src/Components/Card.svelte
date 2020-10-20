@@ -9,13 +9,8 @@
   export let textColor = "rgb(10, 10, 10)";
 
   function setSize(card) {
-    if (size.length > 0) {
-      card.style.width = size;
-      card.style.height = size;
-    } else {
-      card.style.width = width;
-      card.style.height = height;
-    }
+    card.style.minWidth = size || width;
+    card.style.minHeight = size || height;
   }
 
   function setBackgroundColor(card) {
